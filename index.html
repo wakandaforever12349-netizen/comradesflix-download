@@ -1,94 +1,546 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07140f">
-  <meta name="description" content="Get the official ComradesFlix Android app. Download the APK and follow the installation instructions.">
-  <title>ComradesFlix — Official Android Download</title>
+  <meta name="description" content="Download the official ComradesFlix Android application. Powered by Comrades Cyber.">
+  <title>ComradesFlix | Official App Download</title>
+
   <style>
-    :root{--bg:#06110c;--panel:#0c1d14;--green:#20c66b;--green2:#12a653;--text:#f3fff7;--muted:#a8c2b2}
-    *{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at 50% 0%,#123b26 0%,var(--bg) 58%);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    .wrap{width:min(960px,92%);margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.5px;font-size:1.25rem}.logo{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#2be47b,#087b3b);display:grid;place-items:center;box-shadow:0 8px 28px #16b45b44}
-    .logo svg{width:25px;height:25px}.brand span{color:var(--green)}.pill{border:1px solid #2c8051;color:#8ff0b5;border-radius:99px;padding:5px 12px;font-size:.72rem;font-weight:800;letter-spacing:1px}
-    .hero{text-align:center;padding:76px 0 62px}.eyebrow{color:#8ce8ae;text-transform:uppercase;letter-spacing:3px;font-size:.75rem;font-weight:800}
-    h1{font-size:clamp(2.35rem,7vw,4.8rem);line-height:1.04;letter-spacing:-2px;margin:17px auto;max-width:820px}
-    h1 em{font-style:normal;color:var(--green)}.lead{max-width:610px;margin:0 auto 28px;color:var(--muted);font-size:1.08rem}
-    .download{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,#29df79,#0c9c4b);color:#03140a;text-decoration:none;font-weight:900;border-radius:14px;padding:16px 25px;box-shadow:0 12px 35px #18bd6240;transition:.2s}
-    .download:hover{transform:translateY(-2px);filter:brightness(1.08)}.download svg{width:21px;height:21px}
-    .small{font-size:.8rem;color:#8eaa9a;margin-top:12px}.notice{max-width:590px;margin:32px auto 0;background:#0b2116;border:1px solid #1d5636;padding:14px 17px;border-radius:13px;color:#b8d5c4;font-size:.88rem}
-    .section{padding:35px 0}.section h2{text-align:center;font-size:1.7rem;margin:0 0 22px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-    .card{background:linear-gradient(145deg,#10251a,#09170f);border:1px solid #1b3d29;border-radius:17px;padding:22px}.ico{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#153d27;color:#55e58e;margin-bottom:13px}.ico svg{width:23px;height:23px}.card h3{margin:0 0 5px;font-size:1rem}.card p{margin:0;color:var(--muted);font-size:.9rem}
-    .steps{max-width:700px;margin:auto;background:#0b1c12;border:1px solid #1c3d29;border-radius:18px;padding:23px}.steps ol{margin:0;padding-left:22px;color:var(--muted)}.steps li{padding:5px 0}.steps strong{color:var(--text)}
-    footer{text-align:center;color:#799887;font-size:.82rem;padding:35px 0 28px}.footer-brand{color:#b9f6ce;font-weight:800}
-    @media(max-width:650px){.top{padding:16px 0}.hero{padding:55px 0 42px}.grid{grid-template-columns:1fr}.card{padding:18px}.pill{font-size:.62rem}.brand{font-size:1.05rem}}
+    :root {
+      --bg: #06110c;
+      --panel: #0c1d14;
+      --green: #20c66b;
+      --green-dark: #087b3b;
+      --text: #f3fff7;
+      --muted: #a8c2b2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 50% 0%, #123b26 0%, transparent 60%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: .5px;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, #2be47b, #087b3b);
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      box-shadow: 0 8px 25px #16b45b44;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .official {
+      border: 1px solid #2c8051;
+      color: #8ff0b5;
+      border-radius: 30px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 85px 0 65px;
+    }
+
+    .eyebrow {
+      color: #8ce8ae;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin: 22px 0;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .description {
+      max-width: 620px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+      padding: 0 10px;
+    }
+
+    /* DOWNLOAD BUTTON */
+
+    .download-area {
+      margin-top: 32px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 17px 30px;
+      background: linear-gradient(135deg, #29df79, #0c9c4b);
+      color: #03140a;
+      border-radius: 15px;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 12px 35px #18bd6240;
+      transition: .25s;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px #18bd6266;
+      filter: brightness(1.1);
+    }
+
+    .download-btn svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .download-info {
+      color: #8eaa9a;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .status {
+      max-width: 590px;
+      margin: 30px auto 0;
+      padding: 15px;
+      background: #0b2116;
+      border: 1px solid #1d5636;
+      border-radius: 13px;
+      color: #b8d5c4;
+      font-size: 14px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      padding: 45px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 28px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: linear-gradient(145deg, #10251a, #09170f);
+      border: 1px solid #1b3d29;
+      border-radius: 17px;
+      padding: 25px;
+      transition: .25s;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+    }
+
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      background: #153d27;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      margin-bottom: 14px;
+    }
+
+    .feature h3 {
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* INSTALLATION */
+
+    .installation {
+      padding: 45px 0;
+    }
+
+    .steps {
+      max-width: 720px;
+      margin: auto;
+      padding: 28px;
+      background: #0b1c12;
+      border: 1px solid #1c3d29;
+      border-radius: 18px;
+    }
+
+    .steps ol {
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    .steps li {
+      padding: 8px 0;
+    }
+
+    .steps strong {
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 40px 10px;
+      color: #799887;
+      font-size: 13px;
+      border-top: 1px solid #173222;
+      margin-top: 30px;
+    }
+
+    footer strong {
+      color: #b9f6ce;
+    }
+
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: var(--green);
+      margin: 0 8px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 650px) {
+      header {
+        padding: 17px 0;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .official {
+        font-size: 9px;
+        padding: 5px 9px;
+      }
+
+      .hero {
+        padding: 65px 0 45px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+
+      .download-btn {
+        width: 100%;
+        max-width: 340px;
+        font-size: 14px;
+        padding: 17px 12px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        padding: 20px;
+      }
+
+      .section-title {
+        font-size: 25px;
+      }
+
+      .steps {
+        padding: 21px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header class="wrap top">
-    <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#03140a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4zM4 7l3-4h4L8 7m4 0 3-4h4l-3 4M8 11v5l5-2.5z"/></svg></div>COMRADES<span>FLIX</span></div>
-    <div class="pill">OFFICIAL APP DOWNLOAD</div>
+
+  <!-- HEADER -->
+
+  <header class="container">
+    <div class="logo">
+      <div class="logo-icon">🎬</div>
+      COMRADES<span>FLIX</span>
+    </div>
+
+    <div class="official">
+      OFFICIAL APP DOWNLOAD
+    </div>
   </header>
 
   <main>
-    <section class="wrap hero">
-      <div class="eyebrow">Powered by Comrades Cyber</div>
-      <h1>ENTERTAINMENT.<br><em>ANYTIME. ANYWHERE.</em></h1>
-      <p class="lead">Get the ComradesFlix Android app and enjoy your entertainment experience on your phone.</p>
-      <a class="download" id="downloadButton" href="#" aria-label="Download ComradesFlix Android APK">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 19v2h16v-2"/></svg>
-        DOWNLOAD FOR ANDROID
-      </a>
-      <div class="small" id="fileInfo">Android APK · Free download</div>
-      <div class="notice" id="statusNotice">The app download link will be activated when the APK is uploaded. Please check back soon.</div>
-    </section>
 
-    <section class="wrap section">
-      <h2>Why ComradesFlix?</h2>
-      <div class="grid">
-        <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Made for Android</h3><p>Access ComradesFlix from a compatible Android phone or tablet.</p></article>
-        <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h8l-1 8 11-13h-8z"/></svg></div><h3>Simple installation</h3><p>Download the APK and follow the installation steps on your device.</p></article>
-        <article class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Official download</h3><p>Use this page to find the app's official APK release.</p></article>
+    <!-- HERO SECTION -->
+
+    <section class="container hero">
+
+      <div class="eyebrow">
+        POWERED BY COMRADES CYBER
       </div>
+
+      <h1>
+        ENTERTAINMENT.<br>
+        <span>ANYTIME. ANYWHERE.</span>
+      </h1>
+
+      <p class="description">
+        Get the ComradesFlix Android application
+        and enjoy your entertainment experience
+        wherever you are.
+      </p>
+
+      <div class="download-area">
+
+        <a
+          id="downloadButton"
+          class="download-btn"
+          href="https://drive.google.com/uc?export=download&id=1aogx5uEGft6Rhnd68NuQPpRZpDGjCp01"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v12"></path>
+            <path d="m7 10 5 5 5-5"></path>
+            <path d="M4 19v2h16v-2"></path>
+          </svg>
+
+          DOWNLOAD FOR ANDROID
+        </a>
+
+        <div class="download-info">
+          Android APK · Free download
+        </div>
+
+      </div>
+
+      <div class="status" id="status">
+        Your ComradesFlix download link is ready.
+        Click the green button above to download.
+      </div>
+
     </section>
 
-    <section class="wrap section">
-      <h2>How to install</h2>
-      <div class="steps"><ol>
-        <li><strong>Download:</strong> Tap the green download button above.</li>
-        <li><strong>Open the APK:</strong> Find the downloaded file in your phone's Downloads folder.</li>
-        <li><strong>Allow installation if prompted:</strong> Android may ask you to allow your browser or file manager to install apps from this source. Only proceed if you trust this APK.</li>
-        <li><strong>Install:</strong> Follow the on-screen instructions, then open ComradesFlix.</li>
-      </ol></div>
+    <!-- FEATURES -->
+
+    <section class="container features">
+
+      <h2 class="section-title">
+        Why ComradesFlix?
+      </h2>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <div class="feature-icon">📱</div>
+          <h3>Android Friendly</h3>
+          <p>
+            Access ComradesFlix from your compatible
+            Android smartphone or tablet.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Easy Installation</h3>
+          <p>
+            Download the application and follow
+            the simple installation instructions.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🛡️</div>
+          <h3>Official Download</h3>
+          <p>
+            Get your application through the
+            ComradesFlix official download page.
+          </p>
+        </div>
+
+      </div>
+
     </section>
+
+    <!-- INSTALLATION GUIDE -->
+
+    <section class="container installation">
+
+      <h2 class="section-title">
+        How to Install ComradesFlix
+      </h2>
+
+      <div class="steps">
+
+        <ol>
+
+          <li>
+            <strong>Download the application:</strong>
+            Click the green Download for Android button.
+          </li>
+
+          <li>
+            <strong>Locate your APK:</strong>
+            Open your phone's Downloads folder.
+          </li>
+
+          <li>
+            <strong>Allow installation if prompted:</strong>
+            Android may ask you to allow your browser
+            or file manager to install unknown apps.
+            Only allow this for an APK you trust.
+          </li>
+
+          <li>
+            <strong>Install the application:</strong>
+            Follow the installation instructions.
+          </li>
+
+          <li>
+            <strong>Open ComradesFlix:</strong>
+            Launch the application and enjoy!
+          </li>
+
+        </ol>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer class="wrap">© <span id="year"></span> <span class="footer-brand">COMRADESFLIX</span> · Powered by Comrades Cyber</footer>
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      <strong>COMRADESFLIX</strong>
+    </p>
+
+    <p>
+      POWERED BY COMRADES CYBER
+    </p>
+
+    <div class="footer-links">
+      <a href="https://wa.me/" target="_blank"
+        rel="noopener noreferrer">WhatsApp</a>
+    </div>
+
+    <p style="margin-top:15px">
+      Entertainment. Anytime. Anywhere.
+    </p>
+
+  </footer>
 
   <script>
-    // PUBLISHING SETUP: replace this value with your public Google Drive sharing URL.
-    // Example format: https://drive.google.com/uc?export=download&id=YOUR_FILE_ID
-    const APK_DOWNLOAD_URL = "";
-    const APK_FILE_SIZE = ""; // Optional, e.g. "45 MB"
+    // ComradesFlix APK configuration
 
-    const button = document.getElementById("downloadButton");
-    const notice = document.getElementById("statusNotice");
-    const info = document.getElementById("fileInfo");
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const APK_LINK =
+      "https://drive.google.com/uc?export=download&id=1aogx5uEGft6Rhnd68NuQPpRZpDGjCp01";
 
-    if (APK_DOWNLOAD_URL.trim()) {
-      button.href = APK_DOWNLOAD_URL;
-      button.target = "_blank";
-      button.rel = "noopener noreferrer";
-      notice.textContent = "Your ComradesFlix APK download is ready. Only install apps from sources you trust.";
-      if (APK_FILE_SIZE.trim()) info.textContent += " · " + APK_FILE_SIZE;
-    } else {
-      button.addEventListener("click", function(event) {
-        event.preventDefault();
-        notice.textContent = "The APK link has not been added yet. Upload your APK and add its public download URL to this page.";
-      });
-    }
+    const downloadButton =
+      document.getElementById("downloadButton");
+
+    const status =
+      document.getElementById("status");
+
+    // Activate download button
+
+    downloadButton.href = APK_LINK;
+
+    downloadButton.addEventListener("click", function () {
+      status.textContent =
+        "Opening your ComradesFlix APK download. Follow any Google Drive download prompts.";
+    });
+
+    // Automatically update copyright year
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
